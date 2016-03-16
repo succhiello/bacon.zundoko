@@ -6,6 +6,11 @@ const zun = 'ズン',
       kiyoshi = 'キ・ヨ・シ！';
 
 export function run(items=[zun, doko], terminator=[zun, zun, zun, zun, doko], endMessage=kiyoshi) {
+
+    if (!_.every(terminator, _.includes.bind(null, items))) {
+        throw new Error(`invalid argument: items=[${items}] / terminator=[${terminator}].`);
+    }
+
     Bacon.repeat(() => Bacon.once(_.sample(items)))
     .doLog()
     .slidingWindow(terminator.length)
