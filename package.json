@@ -8,7 +8,10 @@
     "test": "babel-node test/index.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": {
+    "type": "MIT",
+    "url": "http://succhiello.mit-license.org"
+  },
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
